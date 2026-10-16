@@ -1,0 +1,20 @@
+Measure License
+
+Copyright (c) 2026 Zaydek Michels-Gualtieri. All rights reserved.
+
+Measure (the Chrome extension, as published in the Chrome Web Store) is free to install and use, for any purpose, personal or commercial, at no cost.
+This repository holds no source code; its documents and images are part of Measure and fall under
+the same terms.
+
+You may:
+- install Measure in any Chrome profile, on any machine, and use it on any page;
+- keep copies of the published package on your own machines, unchanged and with this license.
+
+You may not:
+- redistribute, sell, sublicense or publish Measure or any part of it, other than by linking to this
+  repository or its Chrome Web Store listing;
+- modify Measure, or decompile, disassemble or reverse engineer it, or publish anything derived from
+  it, except where the law forbids this restriction.
+
+Measure is provided "as is", without warranty of any kind, express or implied. In no event shall the
+author be liable for any claim, damages or other liability arising from its use.

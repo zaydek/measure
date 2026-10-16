@@ -1,0 +1,15 @@
+# The publish gate: this repo ships only what is named here, and no
+# source. `layout .` checks it.
+
+$file:  <=2,000                        # Every shipped file stays readable
+$media: [a-z0-9]+(-[a-z0-9]+)*         # e.g. shot-1, hover-apple
+
+README.md $file                        # For people: what it does, install
+AGENTS.md $file                        # For agents: what goes here
+CLAUDE.md -> AGENTS.md
+LICENSE $file                          # Free to use; all rights reserved
+PRIVACY.md $file                       # The store listing links here
+repo.layout $file                      # This contract
+media/                                 # Only what the README shows
+  $media.png
+  ?$media.gif
