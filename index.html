@@ -50,6 +50,14 @@ img { display: block; width: 100%; height: auto; border-radius: 12px; border: 1p
 .install { display: flex; align-items: center; gap: 14px; flex-wrap: wrap; margin: 0 0 12px; }
 .cta { display: inline-flex; align-items: center; gap: 10px; padding: 12px 18px; border-radius: 10px; background: var(--cta); color: var(--cta-text); font-weight: 600; text-decoration: none; }
 .cta:hover { filter: brightness(1.08); }
+.try { display: inline-grid; padding: 11px 17px; border: 1px solid var(--line); border-radius: 10px; background: var(--panel); color: var(--text); font: inherit; font-weight: 600; cursor: pointer; }
+.try > span { grid-area: 1 / 1; text-align: center; }
+.try:not([data-on]) > .on, .try[data-on] > .off { visibility: hidden; }
+.try:hover { border-color: var(--muted); } .try:focus-visible { outline: 2px solid var(--link); outline-offset: 2px; }
+.try[data-on] { border-color: var(--link); color: var(--link); }
+.hint { margin: 0 0 12px; color: var(--muted); font-size: 15px; } .hint[hidden] { display: block; visibility: hidden; }
+.mouse { display: none; }
+@media (hover: none) { .try, .hint { display: none !important; } .mouse { display: block; margin: 0 0 12px; color: var(--muted); font-size: 15px; } }
 .soon { color: var(--muted); font-size: 15px; }
 h2 { font-size: 15px; text-transform: uppercase; letter-spacing: .08em; color: var(--muted); font-weight: 600; margin: 64px 0 16px; }
 .grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 20px; }
@@ -76,7 +84,9 @@ footer a { color: var(--muted); }
 </header>
 <div class="hero"><img src="media/apple.gif" alt="A cursor glides across Apple's home page hero; Measure draws each button's border, padding and size, and the gap between the two buttons, as it moves" width="960" height="600"></div>
 <p class="pitch">Hover any element on any page to see its margin, border, padding and size, a flex or grid gap, and where it sits.</p>
-<div class="install"><a class="cta" href="https://chromewebstore.google.com/detail/measure/dgikeobpapokgcfcamabaoojiejphnfk">Add to Chrome</a><span class="soon">Free, from the Chrome Web Store.</span></div>
+<div class="install"><a class="cta" href="https://chromewebstore.google.com/detail/measure/dgikeobpapokgcfcamabaoojiejphnfk">Add to Chrome</a><button class="try" type="button" data-measure-try><span class="off">Try it on this page</span><span class="on">Turn off</span></button><span class="soon">Free, from the Chrome Web Store.</span></div>
+<p class="hint" data-measure-hint hidden>Hover anything here. Escape turns it off.</p>
+<p class="mouse">Trying it on this page needs a mouse.</p>
 
 <h2>Watch it work</h2>
 <div class="grid loops"><figure><img src="media/google.gif" alt="A cursor moves from Google's search box to its two buttons; Measure shows each one's padding, margin and size" width="1280" height="800" loading="lazy" decoding="async"><figcaption><b>google.com</b> The search box's padding, then each button's margin, border and size.</figcaption></figure><figure><img src="media/stripe.gif" alt="A cursor moves across Stripe's hero; Measure hatches the grid's row gaps, then a button group's gap" width="1280" height="800" loading="lazy" decoding="async"><figcaption><b>stripe.com</b> A hero grid's 40 px row gaps, then the gap between two buttons.</figcaption></figure></div>
@@ -102,6 +112,7 @@ footer a { color: var(--muted); }
   </nav>
 </footer>
 </main>
+<script src="measure-demo.js" defer></script>
 <script>
 fetch("https://api.github.com/repos/zaydek/measure")
   .then((r) => (r.ok ? r.json() : null))
