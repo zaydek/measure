@@ -32,7 +32,7 @@ offsets, and the size sits just above it. [See the site](https://zaydek.github.i
 
 ## Install
 
-**[Add to Chrome](https://chromewebstore.google.com/detail/dgikeobpapokgcfcamabaoojiejphnfk)**: coming soon, it's in review at the Chrome Web Store.
+**[Add to Chrome](https://chromewebstore.google.com/detail/measure/dgikeobpapokgcfcamabaoojiejphnfk)**: free, from the Chrome Web Store.
 
 ## Use
 
